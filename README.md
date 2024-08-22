@@ -17,8 +17,6 @@ This repository houses a collection of Python scripts designed to generate and v
 5. [Configuration](#configuration)
 6. [Output](#output)
 7. [Logging](#logging)
-8. [License](#license)
-9. [Contributing](#contributing)
 
 ## Overview
 
@@ -90,48 +88,54 @@ Set up API keys (if using the Gemini script):
 4. Create a .env file in the root directory.
 Add your Google Gemini API key:
 ```bash
-makefile
+touch .env && nano .env
 ```
 GEMINI_API_KEY=your_gemini_api_key
 
-Usage
-Running the GPU Script
-To run the modeling_opux_gpu.py script:
-
-bash
-Salin kode
+5. Running the GPU Script
+To run the modeling_opux_gpu.py 
+- **script:**
+```bash
 python modeling_opux_gpu.py
+```
 This script will generate QA pairs using a GPU if available. The output will be saved incrementally to avoid data loss.
 
-Running the Gemini Script
-To run the modeling_opux_gemini.py script:
-
-bash
-Salin kode
+6. Running the Gemini Script
+To run the modeling_opux_gemini.py 
+- **script:**
+```bash
 python modeling_opux_gemini.py
+```
 This script interacts with the Google Gemini API to generate QA pairs. Make sure your API key is correctly set in the .env file.
 
-Running the CPU Script
-To run the modeling_opux_cpu.py script:
-
-bash
-Salin kode
+7. Running the CPU Script
+To run the modeling_opux_cpu.py
+- **script:**
+```bash
 python modeling_opux_cpu.py
+```
 This script will generate QA pairs on a CPU, making it suitable for environments without GPU access.
 
-Configuration
+### 5. `Configuration`
 Each script includes configurable parameters such as:
-
-Temperature: Controls the randomness of predictions by scaling the logits before applying softmax.
-Top_k and Top_p: These parameters control the diversity of the generated text.
-Batch Size: Number of prompts processed simultaneously.
+- **Temperature:**
+Controls the randomness of predictions by scaling the logits before applying softmax.
+- **Top_k and Top_p:**
+These parameters control the diversity of the generated text.
+- **Batch Size:**
+Number of prompts processed simultaneously.
 These can be adjusted directly in the script or by passing arguments when running the script.
 
-Output
-JSON Files: The generated QA pairs are saved in JSON format. Each entry includes the question, answer, timestamp, and other metadata.
-Logs: Detailed logs are generated during execution, capturing progress and any issues encountered.
-Logging
+### 6. `Output`
+- **JSON Files:** 
+The generated QA pairs are saved in JSON format. Each entry includes the question, answer, timestamp, and other metadata.
+- **Logs:**
+Detailed logs are generated during execution, capturing progress and any issues encountered.
+
+### 7. `Logging`
 Logging is implemented using Python’s built-in logging library. Logs include timestamps, severity levels, and messages to help in debugging and tracking script progress.
 
-Log Levels: INFO, DEBUG, WARNING, ERROR
-Log Outputs: Console output and log files saved in the logs/ directory.
+Log Levels: 
+- **INFO, DEBUG, WARNING, ERROR**
+Log Outputs: 
+- **Console output and log files saved in the logs/ directory.**
